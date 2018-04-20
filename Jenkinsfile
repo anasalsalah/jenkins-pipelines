@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                powershell -command "& {&'python' --version}"
+                powershell -command "python --version"
             }
         }
     }
