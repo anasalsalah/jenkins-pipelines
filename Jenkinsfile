@@ -5,6 +5,13 @@ import org.apache.commons.io.IOUtils;
 Documentation:
     This is a skeleton for a Jenkins Pipeline script that would
     kick off test runs on ION server via Rest API requests.
+
+    Jenkins job does the following:
+    - Job calls ION Framework via REST API request to schedule a test run.
+    - ION responds with a session ID and/or machine IP address that is running the test.
+    - Job keeps sending requests to ION to check on test run status.
+    - ION eventually responds with the test run result (Success/Failure)
+    - Job asks for test report data and stores it locally
 **/
 
 /**
